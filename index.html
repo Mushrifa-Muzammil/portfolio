@@ -38,7 +38,8 @@
         body.dark-mode .card, body.dark-mode .project-card, 
         body.dark-mode .cert-badge, body.dark-mode .bg-white,
         body.dark-mode .skill-card, body.dark-mode .modal-content,
-        body.dark-mode .contact-card {
+        body.dark-mode .contact-card, body.dark-mode .about-card,
+        body.dark-mode .competencies-card {
             background: #1e293b !important;
             color: #e2e8f0 !important;
             border-color: #334155 !important;
@@ -254,6 +255,89 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
         }
+        /* About Section Cards */
+        .about-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+        .competencies-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .competencies-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .education-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .education-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .education-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .education-content p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+        body.dark-mode .education-content p {
+            color: #94a3b8;
+        }
+        .competency-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .competency-item i {
+            color: #10b981;
+            font-size: 1.1rem;
+            width: 24px;
+        }
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        body.dark-mode .location-badge {
+            background: #334155;
+            color: #e2e8f0;
+        }
         .skill-tag {
             background: #eef2ff;
             color: #1e40af;
@@ -309,9 +393,6 @@
             padding: 12px;
             transition: 0.2s;
         }
-        .cert-badge:hover .cert-img-preview {
-            transform: scale(1.02);
-        }
         .cert-title {
             font-size: 1rem;
             font-weight: 700;
@@ -323,10 +404,6 @@
             color: #64748b;
             margin-bottom: 12px;
         }
-        body.dark-mode .cert-issuer {
-            color: #94a3b8;
-        }
-        /* Contact Section - Professional */
         .contact-section {
             padding: 60px 0 40px;
         }
@@ -338,7 +415,6 @@
             height: 100%;
             transition: all 0.3s;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
         }
         .contact-info-card:hover {
             transform: translateY(-5px);
@@ -358,24 +434,6 @@
         .contact-icon-wrapper i {
             font-size: 28px;
             color: white;
-        }
-        .contact-info-card h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #1e293b;
-        }
-        body.dark-mode .contact-info-card h4 {
-            color: #e2e8f0;
-        }
-        .contact-info-card p {
-            font-size: 1rem;
-            color: #64748b;
-            margin-bottom: 0;
-            word-break: break-all;
-        }
-        body.dark-mode .contact-info-card p {
-            color: #94a3b8;
         }
         .social-links-section {
             margin-top: 2rem;
@@ -429,7 +487,7 @@
             background: white;
             color: #1e293b;
             border-radius: 40px;
-            padding: 8px 24px;
+            padding: 10px 24px;
             font-weight: 600;
             border: 1px solid #e2e8f0;
             text-decoration: none;
@@ -437,6 +495,7 @@
             align-items: center;
             gap: 8px;
             transition: 0.2s;
+            margin-top: 1rem;
         }
         .resume-btn:hover {
             background: #eef2ff;
@@ -455,7 +514,6 @@
             transition: 0.3s;
             pointer-events: none;
             font-weight: 500;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .toast-notification.show {
             opacity: 1;
@@ -477,26 +535,16 @@
             visibility: hidden;
             transition: 0.3s;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .scroll-top.show {
             opacity: 1;
             visibility: visible;
         }
-        .scroll-top:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-        }
         @media (max-width: 768px) {
             .hero-title { font-size: 2rem; }
             .hero-section { padding: 50px 0; }
-            .cert-img-preview { min-height: 140px; max-height: 180px; padding: 8px; }
-            .contact-info-card { margin-bottom: 1rem; }
-            .contact-icon-wrapper { width: 55px; height: 55px; }
-            .contact-icon-wrapper i { font-size: 22px; }
-        }
-        @media (min-width: 1200px) {
-            .cert-img-preview { min-height: 200px; max-height: 260px; }
+            .cert-img-preview { min-height: 140px; max-height: 180px; }
+            .about-card, .competencies-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -537,7 +585,7 @@
                     <img src="./me.jpeg" alt="Mushrifa Muzammil" onerror="this.src='https://via.placeholder.com/150'">
                 </div>
                 <span class="badge bg-white bg-opacity-20 text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                    <i class="fas fa-code me-1"></i> Software Engineer | Fresher
+                    <i class="fas fa-code me-1"></i> Junior Software Developer | Full-Stack Developer
                 </span>
                 <h1 class="hero-title mt-2" data-aos="fade-up">Mushrifa Muzammil</h1>
                 <p class="fs-5 mt-3 opacity-90" data-aos="fade-up">
@@ -559,47 +607,80 @@
 </div>
 
 <div class="container">
-    <!-- About Section -->
+    <!-- About Section - FIXED AND IMPROVED -->
     <section id="about" class="mt-5 pt-4">
-        <div class="row g-5 align-items-center">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-primary text-uppercase small fw-bold">Get to know me</span>
+            <h2 class="section-title">About Me</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Left Column - About Text and Education -->
             <div class="col-lg-7" data-aos="fade-right">
-                <span class="text-primary text-uppercase small fw-bold">About Me</span>
-                <h2 class="fw-bold mt-2" style="font-size: 2rem;">Fresher <span style="color:#3b82f6;">Software Engineer</span></h2>
-                <p class="lead text-secondary mt-3">I'm a passionate IT graduate seeking my first opportunity as a Software Engineer. Skilled in full-stack development with Python, JavaScript, PHP, and SQL. I hold certifications in AI, Web Design, Front-End Development, HTML, and PHP. Eager to contribute to real-world projects and grow as a developer.</p>
-                <div class="row mt-4">
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-graduation-cap fa-2x text-primary me-3"></i>
-                            <div><strong>BIT</strong><br><small>University of Moratuwa</small></div>
+                <div class="about-card">
+                    <h3 class="fw-bold mb-3" style="color: #1e293b;">Fresher <span style="color:#3b82f6;">Software Developer</span></h3>
+                    <p class="text-secondary mb-4" style="line-height: 1.6;">I'm a passionate IT graduate seeking my first opportunity as a Software Developer. Skilled in full-stack development with Python, JavaScript, PHP, and SQL. I hold certifications in AI, Web Design, Front-End Development, HTML, and PHP. Eager to contribute to real-world projects and grow as a developer.</p>
+                    
+                    <div class="mb-4">
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="education-content">
+                                <h4>Bachelor of Information Technology (BIT)</h4>
+                                <p>University of Moratuwa | Starting June 2025</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="education-content">
+                                <h4>Cyber Security & AI Diploma</h4>
+                                <p>MarsTech College | Feb 2025 – Aug 2026</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-certificate fa-2x text-primary me-3"></i>
-                            <div><strong>Cyber Security & AI</strong><br><small>MarsTech College</small></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-3">
+                    
                     <a href="#" data-bs-toggle="modal" data-bs-target="#resumePdfModal" class="resume-btn">
                         <i class="fas fa-file-pdf text-danger"></i> View Resume (PDF)
                     </a>
                 </div>
             </div>
+            
+            <!-- Right Column - Core Competencies -->
             <div class="col-lg-5" data-aos="fade-left">
-                <div class="card-hover p-4">
-                    <div class="text-center mb-3">
-                        <i class="fas fa-code fs-1" style="color:#3b82f6;"></i>
-                        <h5 class="fw-bold mt-2">Core Competencies</h5>
+                <div class="competencies-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bullseye fs-1" style="color: #3b82f6;"></i>
+                        <h4 class="fw-bold mt-2">Core Competencies</h4>
                     </div>
-                    <hr>
-                    <p><i class="fas fa-check-circle text-success me-2"></i> Python, JavaScript, PHP, SQL, C, C#</p>
-                    <p><i class="fas fa-check-circle text-success me-2"></i> HTML5, CSS3, Bootstrap, React (Learning)</p>
-                    <p><i class="fas fa-check-circle text-success me-2"></i> Git, GitHub, VS Code, Linux Basics</p>
-                    <p><i class="fas fa-check-circle text-success me-2"></i> Problem Solving, Teamwork, Fast Learner</p>
-                    <hr>
+                    
+                    <div class="competency-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Python, JavaScript, PHP, SQL, C, C#</span>
+                    </div>
+                    <div class="competency-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>HTML5, CSS3, Bootstrap, React (Learning)</span>
+                    </div>
+                    <div class="competency-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Git, GitHub, VS Code, Linux Basics</span>
+                    </div>
+                    <div class="competency-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Problem Solving, Teamwork, Fast Learner</span>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
                     <div class="text-center">
-                        <span class="badge bg-light text-dark p-2"><i class="fas fa-map-marker-alt text-danger"></i> Kurunegala, Sri Lanka</span>
+                        <div class="location-badge">
+                            <i class="fas fa-map-marker-alt text-danger"></i>
+                            Kurunegala, Sri Lanka
+                        </div>
                     </div>
                 </div>
             </div>
@@ -738,7 +819,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Professional (with Instagram) -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
@@ -747,54 +828,37 @@
                 <p class="mt-3 text-muted">Open for software engineer roles, internships, or collaborations</p>
             </div>
             <div class="row g-4 justify-content-center mt-2">
-                <!-- Email Card -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact-info-card">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
                         <h4>Email Me</h4>
                         <p>musrifa.musammil@gmail.com</p>
-                        <a href="mailto:musrifa.musammil@gmail.com" class="btn-outline-custom btn-sm mt-3 px-4" style="font-size: 0.85rem;">Send Email</a>
+                        <a href="mailto:musrifa.musammil@gmail.com" class="btn-outline-custom btn-sm mt-3 px-4">Send Email</a>
                     </div>
                 </div>
-                <!-- Phone Card -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="contact-info-card">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <div class="contact-icon-wrapper"><i class="fas fa-phone-alt"></i></div>
                         <h4>Call Me</h4>
                         <p>+94 70 555 3647</p>
-                        <a href="tel:+94705553647" class="btn-outline-custom btn-sm mt-3 px-4" style="font-size: 0.85rem;">Call Now</a>
+                        <a href="tel:+94705553647" class="btn-outline-custom btn-sm mt-3 px-4">Call Now</a>
                     </div>
                 </div>
-                <!-- Location Card -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="contact-info-card">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
                         <h4>Location</h4>
                         <p>Kurunegala, Sri Lanka</p>
                         <span class="badge bg-light text-dark mt-3 px-3 py-2">Available Worldwide</span>
                     </div>
                 </div>
             </div>
-            
-            <!-- Social Links Section - GitHub, LinkedIn, and Instagram -->
             <div class="social-links-section text-center" data-aos="fade-up" data-aos-delay="400">
-                <h5 class="mb-4 fw-semibold" style="color: #1e293b;">Connect with me</h5>
+                <h5 class="mb-4 fw-semibold">Connect with me</h5>
                 <div class="d-flex justify-content-center gap-3">
-                    <a href="https://github.com/Mushrifa-Muzammil" target="_blank" class="social-circle-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mushrifa-muzammil-a46678370" target="_blank" class="social-circle-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mushrifamuzammil" target="_blank" class="social-circle-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a href="https://github.com/Mushrifa-Muzammil" target="_blank" class="social-circle-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mushrifa-muzammil-a46678370" target="_blank" class="social-circle-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/mushrifamuzammil" target="_blank" class="social-circle-link"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="declaration-text mt-4">
                     <i class="fas fa-quote-left me-2 text-primary opacity-50"></i>
@@ -806,7 +870,6 @@
     </section>
 </div>
 
-<!-- Footer -->
 <footer>
     <div class="container py-4 text-center">
         <p class="mb-0">© 2026 Mushrifa Muzammil | Software Engineer Portfolio</p>
@@ -856,7 +919,6 @@
 <script>
     AOS.init({ duration: 800, once: true });
     
-    // Typing Animation
     const roles = ["Software Engineer", "Full-Stack Developer", "Python Programmer", "Web Developer"];
     let idx = 0, ch = 0;
     const typingSpan = document.getElementById("typingText");
@@ -866,27 +928,20 @@
             ch++;
             setTimeout(typeLoop, 120);
         } else {
-            setTimeout(() => {
-                ch = 0;
-                idx = (idx + 1) % roles.length;
-                typeLoop();
-            }, 2000);
+            setTimeout(() => { ch = 0; idx = (idx + 1) % roles.length; typeLoop(); }, 2000);
         }
     }
     typeLoop();
     
-    // Dark Mode
     const darkToggle = document.getElementById("darkModeToggle");
     darkToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         const icon = darkToggle.querySelector("i");
         if (document.body.classList.contains("dark-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
+            icon.classList.remove("fa-moon"); icon.classList.add("fa-sun");
             localStorage.setItem("darkMode", "enabled");
         } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
+            icon.classList.remove("fa-sun"); icon.classList.add("fa-moon");
             localStorage.setItem("darkMode", "disabled");
         }
     });
@@ -896,7 +951,6 @@
         darkToggle.querySelector("i").classList.add("fa-sun");
     }
     
-    // Scroll to Top
     const scrollBtn = document.getElementById("scrollTop");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) scrollBtn.classList.add("show");
@@ -904,14 +958,12 @@
     });
     scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     
-    // PDF Modal Function
     function openPDFModal(pdfPath, title) {
         const modal = new bootstrap.Modal(document.getElementById("pdfViewerModal"));
         document.getElementById("pdfModalTitle").innerText = title;
         document.getElementById("pdfEmbed").src = pdfPath;
         document.getElementById("pdfDownloadLink").href = pdfPath;
         modal.show();
-        
         const toast = document.getElementById("toastMsg");
         toast.textContent = "📄 Opening " + title;
         toast.classList.add("show");
@@ -919,7 +971,6 @@
     }
     window.openPDFModal = openPDFModal;
     
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             const href = this.getAttribute("href");

@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
             transition: background 0.3s, color 0.3s;
         }
-        /* Dark Mode Styles */
         body.dark-mode {
             background: #0f172a;
             color: #e2e8f0;
@@ -39,7 +38,7 @@
         body.dark-mode .cert-badge, body.dark-mode .bg-white,
         body.dark-mode .skill-card, body.dark-mode .modal-content,
         body.dark-mode .contact-card, body.dark-mode .about-card,
-        body.dark-mode .competencies-card {
+        body.dark-mode .competencies-card, body.dark-mode .experience-card {
             background: #1e293b !important;
             color: #e2e8f0 !important;
             border-color: #334155 !important;
@@ -79,7 +78,6 @@
             background: #3b82f6;
             color: white;
         }
-        /* Navbar */
         .navbar-custom {
             background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
@@ -126,7 +124,6 @@
             background: #334155;
             color: #fbbf24;
         }
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2d3a4f 100%);
             position: relative;
@@ -255,7 +252,6 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
         }
-        /* About Section Cards */
         .about-card {
             background: white;
             border-radius: 1.5rem;
@@ -277,6 +273,18 @@
             border: 1px solid #e2e8f0;
         }
         .competencies-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+        .experience-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .experience-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
         }
@@ -363,7 +371,6 @@
             height: 100%;
             border: 1px solid rgba(0,0,0,0.03);
         }
-        /* Certificate Card */
         .cert-badge {
             background: white;
             border-radius: 1.2rem;
@@ -544,7 +551,58 @@
             .hero-title { font-size: 2rem; }
             .hero-section { padding: 50px 0; }
             .cert-img-preview { min-height: 140px; max-height: 180px; }
-            .about-card, .competencies-card { padding: 1.5rem; }
+            .about-card, .competencies-card, .experience-card { padding: 1.5rem; }
+        }
+        .exp-badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .exp-company {
+            font-weight: 600;
+            color: #3b82f6;
+            font-size: 1rem;
+        }
+        body.dark-mode .exp-company {
+            color: #60a5fa;
+        }
+        .exp-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        body.dark-mode .exp-desc {
+            color: #94a3b8;
+        }
+        .exp-cert-img {
+            width: 100%;
+            max-height: 160px;
+            min-height: 120px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #f1f5f9;
+            padding: 10px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .exp-cert-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            border-color: #3b82f6;
+        }
+        body.dark-mode .exp-cert-img {
+            background: #0f172a;
+            border-color: #334155;
+        }
+        body.dark-mode .exp-cert-img:hover {
+            border-color: #3b82f6;
         }
     </style>
 </head>
@@ -564,6 +622,7 @@
         <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#industry-experience">Industry Experience</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#certifications">Certificates</a></li>
@@ -648,13 +707,196 @@
         </div>
     </section>
 
+    <!-- Industry Experience Section - Total 7 Items -->
+    <section id="industry-experience" class="mt-5 pt-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-primary text-uppercase small fw-bold">Industry Experience</span>
+            <h2 class="section-title">Job Simulations</h2>
+            <div class="title-underline"></div>
+            <p class="text-muted mt-2">Hands-on industry experience through Forage job simulations</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- 1. Advanced Software Engineering - Walmart -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">Advanced Software Engineering</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> Walmart Global Tech</p>
+                    <img src="Advanced_Software_Engineering_walmart_global_tech.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('Advanced_Software_Engineering_walmart_global_tech.pdf', 'Advanced Software Engineering - Walmart Global Tech')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Advanced Data Structures</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Software Architecture</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Relational Database Design</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Data Munging</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="Advanced_Software_Engineering_walmart_global_tech.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Software Engineering - Commonwealth Bank -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">Software Engineering</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> Commonwealth Bank</p>
+                    <img src="Software_Engineering_commonwealth_bank.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('Software_Engineering_commonwealth_bank.pdf', 'Software Engineering - Commonwealth Bank')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Modify .NET Backend</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Modify React/Redux Frontend</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Cover Your Code!</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Create a Pull Request</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="Software_Engineering_commonwealth_bank.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Technology Software Development - CITI -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">Technology Software Development</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> CITI</p>
+                    <img src="Technology_Software_Development_CITI.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('Technology_Software_Development_CITI.pdf', 'Technology Software Development - CITI')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Create a State Diagram</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Write a Feature Proposal</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Query Data from the Web</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Visualize Live Data</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="Technology_Software_Development_CITI.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. AI in Action - VISTA -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">AI in Action</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> VISTA</p>
+                    <img src="AI_in_Action_VISTA.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('AI_in_Action_VISTA.pdf', 'AI in Action - VISTA')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Build Fluency in Prompt Engineering</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Contextual Engineering</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Apply Prompt Skills to Automate Workflow</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="AI_in_Action_VISTA.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Data Labeling - Forage -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">Data Labeling</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> Forage</p>
+                    <img src="Data_Labeling_forage.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('Data_Labeling_forage.pdf', 'Data Labeling - Forage')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Batch Labeling & PII Awareness</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Review, Quality Control & Iteration</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="Data_Labeling_forage.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. The Private Bank - Bank of America -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">The Private Bank</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> Bank of America</p>
+                    <img src="The_Private_Bank_of_America.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('The_Private_Bank_of_America.pdf', 'The Private Bank - Bank of America')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Client Account Servicing & Communication</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Uncovering Client Goals & Priorities</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Matching Goals to Strategies</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="The_Private_Bank_of_America.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Introduction to Cybersecurity - Commonwealth Bank -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="experience-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="exp-badge">Forage</span>
+                        <small class="text-muted">July 2026</small>
+                    </div>
+                    <h4 class="fw-bold mt-2">Introduction to Cybersecurity</h4>
+                    <p class="exp-company"><i class="fas fa-building me-1"></i> Commonwealth Bank</p>
+                    <img src="Introduction_to_Cybersecurity_commonwealth_bank.png" alt="Certificate" class="exp-cert-img" onclick="openPDFModal('Introduction_to_Cybersecurity_commonwealth_bank.pdf', 'Introduction to Cybersecurity - Commonwealth Bank')">
+                    <div class="exp-desc mt-2">
+                        <p>Completed practical tasks in:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Data Analysis</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Incident Response</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Security Awareness</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Penetration Testing</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <a href="Introduction_to_Cybersecurity_commonwealth_bank.pdf" target="_blank" class="btn-outline-custom btn-sm px-3 py-1 me-2"><i class="fas fa-file-pdf"></i> View PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="mt-5 pt-4">
         <div class="text-center" data-aos="fade-up"><h2 class="section-title">Technical Skills</h2><div class="title-underline"></div></div>
         <div class="row mt-4"><div class="col-12 text-center" data-aos="zoom-in"><div class="p-4 bg-white rounded-4 shadow-sm"><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span><span class="skill-tag">SQL</span><span class="skill-tag">C</span><span class="skill-tag">C#</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">Bootstrap 5</span><span class="skill-tag">Git & GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">React.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">REST APIs</span><span class="skill-tag">UI/UX Basics</span></div></div></div>
     </section>
 
-    <!-- Projects Section - Added CyberSentinel AI -->
+    <!-- Projects Section -->
     <section id="projects" class="mt-5 pt-4">
         <div class="text-center" data-aos="fade-up"><h2 class="section-title">Featured Projects</h2><div class="title-underline"></div><p class="text-muted mt-2">Live demos & GitHub repositories</p></div>
         <div class="row g-4 mt-2">
@@ -675,7 +917,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Simon Game -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-card card-hover">
                     <i class="fas fa-lightbulb fa-2x" style="color:#3b82f6;"></i>
@@ -693,7 +934,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Dicee Game -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-card card-hover">
                     <i class="fas fa-dice-d6 fa-2x" style="color:#3b82f6;"></i>
@@ -710,7 +950,6 @@
                     </div>
                 </div>
             </div>
-            <!-- AI Tools Showcase -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"><div class="project-card card-hover"><i class="fas fa-robot fa-2x" style="color:#3b82f6;"></i><h5 class="fw-bold mt-3">AI Tools Showcase</h5><p>Modern website showcasing 12+ AI tools including ChatGPT, DeepSeek AI, Midjourney. Built with Bootstrap 5 & Glassmorphism.</p><a href="https://mushrifa-muzammil.github.io/AI_Tools_Showcase/" target="_blank" class="btn-outline-custom btn-sm px-3 py-1">Live Demo →</a></div></div>
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400"><div class="project-card card-hover"><i class="fas fa-heartbeat fa-2x" style="color:#3b82f6;"></i><h5 class="fw-bold mt-3">BMI Calculator</h5><p>PHP + JavaScript health tracker with real-time calculation.</p><a href="https://mushrifa-muzammil.github.io/BMI_Ass04_PHP/" target="_blank" class="btn-outline-custom btn-sm px-3 py-1">Live Demo →</a></div></div>
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500"><div class="project-card card-hover"><i class="fas fa-file-invoice-dollar fa-2x" style="color:#3b82f6;"></i><h5 class="fw-bold mt-3">Billing System</h5><p>Dynamic invoice system using PHP/HTML/CSS/JS.</p><a href="https://mushrifa-muzammil.github.io/Data_Bill_Ass06_PHP/" target="_blank" class="btn-outline-custom btn-sm px-3 py-1">Live Demo →</a></div></div>
@@ -729,6 +968,7 @@
             <p class="text-muted mt-2">Click any certificate to view the full PDF document</p>
         </div>
         <div class="row g-4 mt-2">
+            <!-- Web Development Fundamentals - IBM -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
                 <div class="cert-badge" onclick="openPDFModal('Web_Developmen_Fundamentals_IBM.pdf', 'Web Development Fundamentals - IBM')">
                     <img src="Web_Developmen_Fundamentals_IBM.png" alt="Web Development Fundamentals IBM" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Web+Development+Fundamentals'">
@@ -737,14 +977,16 @@
                     <span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Introduction to Cybersecurity - Cisco -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="cert-badge" onclick="openPDFModal('Introduction_to_Cybersecurity.pdf', 'Introduction to Cybersecurity - Cisco Networking Academy')">
-                    <img src="Introduction_to_Cybersecurity.png" alt="Cybersecurity" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Cybersecurity'">
+                    <img src="Introduction_to_Cybersecurity.png" alt="Cybersecurity Cisco" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Cybersecurity+Cisco'">
                     <div class="cert-title">Introduction to Cybersecurity</div>
                     <div class="cert-issuer">Cisco Networking Academy</div>
                     <span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Cybersecurity Bag - Cisco -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="cert-badge" onclick="openPDFModal('Introduction_to_Cybersecurity_Bag.pdf', 'Intro to Cybersecurity - Cisco Networking Academy')">
                     <img src="Introduction_to_Cybersecurity_Bag.png" alt="Cybersecurity Bag" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Cybersecurity+Bag'">
@@ -753,42 +995,49 @@
                     <span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Web Design -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
                 <div class="cert-badge" onclick="openPDFModal('Web_Design_for_Beginners_E-Certificate.pdf', 'Web Design for Beginners - University of Moratuwa')">
                     <img src="web_design.png" alt="Web Design" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Web+Design'">
                     <div class="cert-title">Web Design for Beginners</div><div class="cert-issuer">University of Moratuwa (CODL)</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Python for Beginners -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
                 <div class="cert-badge" onclick="openPDFModal('Python_for_Beginners_E-Certificate.pdf', 'Python for Beginners - University of Moratuwa')">
                     <img src="python.png" alt="Python" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Python'">
                     <div class="cert-title">Python for Beginners</div><div class="cert-issuer">University of Moratuwa (CODL)</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Front End Web Development -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
                 <div class="cert-badge" onclick="openPDFModal('Front_End_Web_Development_E-Certificate.pdf', 'Front End Web Development - Simplilearn')">
                     <img src="Front_End_Web_Development.png" alt="Front End Web Dev" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Front+End+Web+Dev'">
                     <div class="cert-title">Front End Web Development</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- AI Fundamentals -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
                 <div class="cert-badge" onclick="openPDFModal('AIFundamentalsFoundationsforUnderstandingAI_Badge20260514-31-vkdqxk.pdf', 'AI Fundamentals Foundations - IBM SkillsBuild')">
                     <img src="AI_Fundamentals.png" alt="AI Fundamentals" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=AI+Fundamentals'">
                     <div class="cert-title">AI Fundamentals Foundations</div><div class="cert-issuer">IBM SkillsBuild</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- Front End Development -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
                 <div class="cert-badge" onclick="openPDFModal('Front_End_Development.pdf', 'Front End Development - Simplilearn')">
                     <img src="Front_End_Development.png" alt="Front End Development" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Front+End+Dev'">
                     <div class="cert-title">Front End Development</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- HTML -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
                 <div class="cert-badge" onclick="openPDFModal('HTML.pdf', 'HTML Certification - Simplilearn')">
                     <img src="HTML.png" alt="HTML" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=HTML'">
                     <div class="cert-title">Introduction to HTML</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+            <!-- PHP -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
                 <div class="cert-badge" onclick="openPDFModal('PHP.pdf', 'PHP Certification - Simplilearn')">
                     <img src="PHP.png" alt="PHP" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=PHP'">

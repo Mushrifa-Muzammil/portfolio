@@ -182,6 +182,7 @@
             color: white;
             transition: 0.3s;
             text-decoration: none;
+            backdrop-filter: blur(4px);
         }
         .social-icon:hover {
             background: #3b82f6;
@@ -604,6 +605,48 @@
         body.dark-mode .exp-cert-img:hover {
             border-color: #3b82f6;
         }
+        /* HackerRank Badge Styles */
+        .hackerrank-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            padding: 8px 16px 8px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: 0.3s;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+        .hackerrank-badge:hover {
+            background: #2ec866;
+            border-color: #2ec866;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .hackerrank-badge i {
+            font-size: 1.1rem;
+            color: #2ec866;
+        }
+        .hackerrank-badge:hover i {
+            color: #fff;
+        }
+        body.dark-mode .hackerrank-badge {
+            background: rgba(255,255,255,0.08);
+        }
+        body.dark-mode .hackerrank-badge:hover {
+            background: #2ec866;
+        }
+        .badge-text {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        .hr-badge-star {
+            color: #f5a623;
+        }
     </style>
 </head>
 <body>
@@ -650,11 +693,18 @@
                 <p class="fs-5 mt-3 opacity-90" data-aos="fade-up">
                     <span id="typingText" style="border-right: 2px solid white; padding-right: 5px;"></span>
                 </p>
-                <div class="d-flex justify-content-center gap-3 mt-4" data-aos="fade-up">
+                <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap" data-aos="fade-up">
                     <a href="mailto:musrifa.musammil@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/mushrifa-muzammil-a46678370" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Mushrifa-Muzammil" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                     <a href="https://www.instagram.com/mushrifamuzammil" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <!-- HackerRank Badge -->
+                    <a href="https://www.hackerrank.com/profile/muzamush2811" target="_blank" class="hackerrank-badge">
+                        <i class="fab fa-hackerrank"></i>
+                        <span>HackerRank</span>
+                        <span class="badge-text">|</span>
+                        <span class="badge-text"><i class="fas fa-star hr-badge-star"></i> 4★</span>
+                    </a>
                 </div>
                 <div class="mt-5" data-aos="fade-up">
                     <a href="#contact" class="btn-primary-custom me-3"><i class="fas fa-paper-plane me-2"></i> Hire Me</a>
@@ -707,7 +757,7 @@
         </div>
     </section>
 
-    <!-- Industry Experience Section - Total 7 Items -->
+    <!-- Industry Experience Section -->
     <section id="industry-experience" class="mt-5 pt-4">
         <div class="text-center mb-5" data-aos="fade-up">
             <span class="text-primary text-uppercase small fw-bold">Industry Experience</span>
@@ -968,8 +1018,17 @@
             <p class="text-muted mt-2">Click any certificate to view the full PDF document</p>
         </div>
         <div class="row g-4 mt-2">
-            <!-- Web Development Fundamentals - IBM -->
+            <!-- HackerRank Software Engineer Certificate -->
             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+                <div class="cert-badge" onclick="openPDFModal('software_engineer_certificate.pdf', 'Software Engineer - HackerRank')">
+                    <img src="software_engineer_certificate.png" alt="HackerRank Software Engineer" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Software+Engineer'">
+                    <div class="cert-title">Software Engineer</div>
+                    <div class="cert-issuer">HackerRank</div>
+                    <span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
+                </div>
+            </div>
+            <!-- Web Development Fundamentals - IBM -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="cert-badge" onclick="openPDFModal('Web_Developmen_Fundamentals_IBM.pdf', 'Web Development Fundamentals - IBM')">
                     <img src="Web_Developmen_Fundamentals_IBM.png" alt="Web Development Fundamentals IBM" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Web+Development+Fundamentals'">
                     <div class="cert-title">Web Development Fundamentals</div>
@@ -978,7 +1037,7 @@
                 </div>
             </div>
             <!-- Introduction to Cybersecurity - Cisco -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="cert-badge" onclick="openPDFModal('Introduction_to_Cybersecurity.pdf', 'Introduction to Cybersecurity - Cisco Networking Academy')">
                     <img src="Introduction_to_Cybersecurity.png" alt="Cybersecurity Cisco" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Cybersecurity+Cisco'">
                     <div class="cert-title">Introduction to Cybersecurity</div>
@@ -987,7 +1046,7 @@
                 </div>
             </div>
             <!-- Cybersecurity Bag - Cisco -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
                 <div class="cert-badge" onclick="openPDFModal('Introduction_to_Cybersecurity_Bag.pdf', 'Intro to Cybersecurity - Cisco Networking Academy')">
                     <img src="Introduction_to_Cybersecurity_Bag.png" alt="Cybersecurity Bag" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Cybersecurity+Bag'">
                     <div class="cert-title">Intro to Cybersecurity (Badge)</div>
@@ -996,54 +1055,60 @@
                 </div>
             </div>
             <!-- Web Design -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
                 <div class="cert-badge" onclick="openPDFModal('Web_Design_for_Beginners_E-Certificate.pdf', 'Web Design for Beginners - University of Moratuwa')">
                     <img src="web_design.png" alt="Web Design" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Web+Design'">
                     <div class="cert-title">Web Design for Beginners</div><div class="cert-issuer">University of Moratuwa (CODL)</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- Python for Beginners -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
                 <div class="cert-badge" onclick="openPDFModal('Python_for_Beginners_E-Certificate.pdf', 'Python for Beginners - University of Moratuwa')">
                     <img src="python.png" alt="Python" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Python'">
                     <div class="cert-title">Python for Beginners</div><div class="cert-issuer">University of Moratuwa (CODL)</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- Front End Web Development -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
                 <div class="cert-badge" onclick="openPDFModal('Front_End_Web_Development_E-Certificate.pdf', 'Front End Web Development - Simplilearn')">
                     <img src="Front_End_Web_Development.png" alt="Front End Web Dev" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Front+End+Web+Dev'">
                     <div class="cert-title">Front End Web Development</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- AI Fundamentals -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
                 <div class="cert-badge" onclick="openPDFModal('AIFundamentalsFoundationsforUnderstandingAI_Badge20260514-31-vkdqxk.pdf', 'AI Fundamentals Foundations - IBM SkillsBuild')">
                     <img src="AI_Fundamentals.png" alt="AI Fundamentals" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=AI+Fundamentals'">
                     <div class="cert-title">AI Fundamentals Foundations</div><div class="cert-issuer">IBM SkillsBuild</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- Front End Development -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
                 <div class="cert-badge" onclick="openPDFModal('Front_End_Development.pdf', 'Front End Development - Simplilearn')">
                     <img src="Front_End_Development.png" alt="Front End Development" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=Front+End+Dev'">
                     <div class="cert-title">Front End Development</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- HTML -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
                 <div class="cert-badge" onclick="openPDFModal('HTML.pdf', 'HTML Certification - Simplilearn')">
                     <img src="HTML.png" alt="HTML" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=HTML'">
                     <div class="cert-title">Introduction to HTML</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
             <!-- PHP -->
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1000">
                 <div class="cert-badge" onclick="openPDFModal('PHP.pdf', 'PHP Certification - Simplilearn')">
                     <img src="PHP.png" alt="PHP" class="cert-img-preview" onerror="this.src='https://placehold.co/500x350/e2e8f0/475569?text=PHP'">
                     <div class="cert-title">Introduction to PHP</div><div class="cert-issuer">Simplilearn</div><span class="badge bg-primary"><i class="fas fa-file-pdf me-1"></i> View PDF</span>
                 </div>
             </div>
+        </div>
+        <!-- HackerRank Profile Link -->
+        <div class="text-center mt-4">
+            <a href="https://www.hackerrank.com/profile/muzamush2811" target="_blank" class="btn-primary-custom">
+                <i class="fab fa-hackerrank me-2"></i> View My HackerRank Profile
+            </a>
         </div>
     </section>
 
@@ -1056,7 +1121,16 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200"><div class="contact-info-card"><div class="contact-icon-wrapper"><i class="fas fa-phone-alt"></i></div><h4>Call Me</h4><p>+94 70 555 3647</p><a href="tel:+94705553647" class="btn-outline-custom btn-sm mt-3 px-4">Call Now</a></div></div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"><div class="contact-info-card"><div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div><h4>Location</h4><p>Kurunegala, Sri Lanka</p><span class="badge bg-light text-dark mt-3 px-3 py-2">Available Worldwide</span></div></div>
             </div>
-            <div class="social-links-section text-center" data-aos="fade-up" data-aos-delay="400"><h5 class="mb-4 fw-semibold">Connect with me</h5><div class="d-flex justify-content-center gap-3"><a href="https://github.com/Mushrifa-Muzammil" target="_blank" class="social-circle-link"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/mushrifa-muzammil-a46678370" target="_blank" class="social-circle-link"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/mushrifamuzammil" target="_blank" class="social-circle-link"><i class="fab fa-instagram"></i></a></div><div class="declaration-text mt-4"><i class="fas fa-quote-left me-2 text-primary opacity-50"></i>I hereby declare that the above information is true and correct to the best of my knowledge.<br><strong class="mt-2 d-inline-block">— Mushrifa Muzammil</strong></div></div>
+            <div class="social-links-section text-center" data-aos="fade-up" data-aos-delay="400">
+                <h5 class="mb-4 fw-semibold">Connect with me</h5>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://github.com/Mushrifa-Muzammil" target="_blank" class="social-circle-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mushrifa-muzammil-a46678370" target="_blank" class="social-circle-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/mushrifamuzammil" target="_blank" class="social-circle-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.hackerrank.com/profile/muzamush2811" target="_blank" class="social-circle-link"><i class="fab fa-hackerrank"></i></a>
+                </div>
+                <div class="declaration-text mt-4"><i class="fas fa-quote-left me-2 text-primary opacity-50"></i>I hereby declare that the above information is true and correct to the best of my knowledge.<br><strong class="mt-2 d-inline-block">— Mushrifa Muzammil</strong></div>
+            </div>
         </div>
     </section>
 </div>
